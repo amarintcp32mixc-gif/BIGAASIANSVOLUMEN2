@@ -2,17 +2,17 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors());
-let estado = "OFF";
-app.get('/on', (req, res) => {
-estado = "ON";
+let estadoBuzzer = "OFF";
+app.get('/buzzer/on', (req, res) => {
+estadoBuzzer = "ON";
 res.send("OK");
 });
-app.get('/off', (req, res) => {
-estado = "OFF";
+app.get('/buzzer/off', (req, res) => {
+estadoBuzzer = "OFF";
 res.send("OK");
 });
-app.get('/estado', (req, res) => {
-res.send(estado);
+app.get('/buzzer/estado', (req, res) => {
+res.send(estadoBuzzer);
 });
 const PORT = process.env.PORT || 3000;
 
